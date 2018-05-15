@@ -1,34 +1,42 @@
-﻿using System;
+﻿using Series_Renamer.Libraries;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace Series_Renamer
 {
     public class HTMLExtractor
     {
         public string HTML { get; set; }
-        public string SeasonEpisode { get; set; }
-        public string EpisodeName { get; set; }
-        public string start { get; }
-        public string end { get; }
+        public string SiteName { get; set; }
+        public MetaCollector MetaCollector { get; set; }
+
         public HTMLExtractor(string passedURL)
         {
             HTML = passedURL;
+
+            SiteName = SiteDetector(HTML);
+            
             using (WebClient client = new WebClient()) // WebClient class inherits IDisposable
             {
                 HTML = client.DownloadString(HTML);
             }
 
-            start         = "bp_heading";
-            end           = "div>";
-            SeasonEpisode = getBetween(HTML, start, end);
-            
-            start         = "<h1 itemprop=\"name\" class=\"\">";
-            end           = "&nbsp;";
-            EpisodeName   = getBetween(HTML, start, end);
+            if(SiteName.ToLower() == "imdb")
+            {
+                IMDB imdb = new IMDB(HTML);
+                MetaCollector = new MetaCollector(imdb);
+            }
+            else
+            {
+                TV tv = new TV(HTML);
+                MetaCollector = new MetaCollector(tv);
+            }
+
         }
 
         public static string getBetween(string strSource, string strStart, string strEnd)
@@ -44,6 +52,11 @@ namespace Series_Renamer
             {
                 return "";
             }
+        }
+
+        public string SiteDetector(string URL)
+        {
+            return getBetween(HTML, "www.", ".com");
         }
     }
 }

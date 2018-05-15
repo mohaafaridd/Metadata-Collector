@@ -29,7 +29,7 @@ namespace Series_Renamer
         {
             HTMLExtractor htmlExtractor = new HTMLExtractor(urlTextBox.Text);
 
-            MetaCollector metaCollector = new MetaCollector(htmlExtractor);
+            MetaCollector metaCollector = htmlExtractor.MetaCollector;
 
             urlTextBox.Text = string.Empty;
 
@@ -43,6 +43,7 @@ namespace Series_Renamer
                 urlTextBox.Text += $"{metaCollector.EpisodeName}";
 
             Clipboard.SetText(urlTextBox.Text);
+            MessageBox.Show("Done!");
         }
 
         private void Window_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)

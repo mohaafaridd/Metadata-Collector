@@ -32,7 +32,7 @@
         <Grid>
 
             <Grid.RowDefinitions>
-                <RowDefinition Height="50" />
+                <RowDefinition Height="30" />
                 <RowDefinition Height="*" />
                 <RowDefinition Height="*" />
                 <RowDefinition Height="*" />
@@ -43,6 +43,7 @@
                 Margin="25,0"
                 HorizontalAlignment="Right"
                 VerticalAlignment="Center"
+                Cursor="Hand"
                 Kind="WindowClose"
                 MouseEnter="PackIcon_MouseEnter"
                 MouseLeave="PackIcon_MouseLeave"
@@ -87,7 +88,7 @@
                 Name="getmetaButton"
                 Grid.Row="3"
                 Width="300"
-                Margin="5"
+                Margin="10"
                 HorizontalAlignment="Center"
                 VerticalAlignment="Center"
                 Click="getmetaButton_Click"

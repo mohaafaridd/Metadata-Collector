@@ -69,6 +69,8 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Libraries\HTMLExtractor.cs" />
+    <Compile Include="Libraries\IMDB.cs" />
+    <Compile Include="Libraries\TV.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
