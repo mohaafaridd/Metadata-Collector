@@ -1,0 +1,22 @@
+C:\Users\Farid\documents\visual studio 2017\Projects\Series Renamer\Series Renamer\bin\Debug\Series Renamer.exe.config
+C:\Users\Farid\documents\visual studio 2017\Projects\Series Renamer\Series Renamer\bin\Debug\Series Renamer.exe
+C:\Users\Farid\documents\visual studio 2017\Projects\Series Renamer\Series Renamer\bin\Debug\Series Renamer.pdb
+C:\Users\Farid\documents\visual studio 2017\Projects\Series Renamer\Series Renamer\bin\Debug\MaterialDesignColors.dll
+C:\Users\Farid\documents\visual studio 2017\Projects\Series Renamer\Series Renamer\bin\Debug\MaterialDesignThemes.Wpf.dll
+C:\Users\Farid\documents\visual studio 2017\Projects\Series Renamer\Series Renamer\bin\Debug\MaterialDesignColors.pdb
+C:\Users\Farid\documents\visual studio 2017\Projects\Series Renamer\Series Renamer\bin\Debug\MaterialDesignThemes.Wpf.pdb
+C:\Users\Farid\documents\visual studio 2017\Projects\Series Renamer\Series Renamer\bin\Debug\MaterialDesignThemes.Wpf.xml
+C:\Users\Farid\documents\visual studio 2017\Projects\Series Renamer\Series Renamer\obj\Debug\Series Renamer.csprojAssemblyReference.cache
+C:\Users\Farid\documents\visual studio 2017\Projects\Series Renamer\Series Renamer\obj\Debug\MainWindow.g.cs
+C:\Users\Farid\documents\visual studio 2017\Projects\Series Renamer\Series Renamer\obj\Debug\App.g.cs
+C:\Users\Farid\documents\visual studio 2017\Projects\Series Renamer\Series Renamer\obj\Debug\Series Renamer_MarkupCompile.cache
+C:\Users\Farid\documents\visual studio 2017\Projects\Series Renamer\Series Renamer\obj\Debug\Series Renamer_MarkupCompile.lref
+C:\Users\Farid\documents\visual studio 2017\Projects\Series Renamer\Series Renamer\obj\Debug\App.baml
+C:\Users\Farid\documents\visual studio 2017\Projects\Series Renamer\Series Renamer\obj\Debug\MainWindow.baml
+C:\Users\Farid\documents\visual studio 2017\Projects\Series Renamer\Series Renamer\obj\Debug\Series Renamer.g.resources
+C:\Users\Farid\documents\visual studio 2017\Projects\Series Renamer\Series Renamer\obj\Debug\Series_Renamer.Properties.Resources.resources
+C:\Users\Farid\documents\visual studio 2017\Projects\Series Renamer\Series Renamer\obj\Debug\Series Renamer.csproj.GenerateResource.cache
+C:\Users\Farid\documents\visual studio 2017\Projects\Series Renamer\Series Renamer\obj\Debug\Series Renamer.csproj.CoreCompileInputs.cache
+C:\Users\Farid\documents\visual studio 2017\Projects\Series Renamer\Series Renamer\obj\Debug\Series Renamer.csproj.CopyComplete
+C:\Users\Farid\documents\visual studio 2017\Projects\Series Renamer\Series Renamer\obj\Debug\Series Renamer.exe
+C:\Users\Farid\documents\visual studio 2017\Projects\Series Renamer\Series Renamer\obj\Debug\Series Renamer.pdb
