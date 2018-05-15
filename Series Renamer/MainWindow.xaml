@@ -36,6 +36,7 @@
                 <RowDefinition Height="*" />
                 <RowDefinition Height="*" />
                 <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
             </Grid.RowDefinitions>
 
             <materialDesign:PackIcon
@@ -63,8 +64,16 @@
                 VerticalAlignment="Center"
                 materialDesign:HintAssist.Hint="URL" />
 
-            <StackPanel
+            <TextBlock
+                Name="SeriesName"
                 Grid.Row="2"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                FontSize="17"
+                FontWeight="Bold"
+                Text="Series Name Here!" />
+            <StackPanel
+                Grid.Row="3"
                 HorizontalAlignment="Center"
                 Orientation="Horizontal">
                 <CheckBox
@@ -86,8 +95,8 @@
 
             <Button
                 Name="getmetaButton"
-                Grid.Row="3"
-                Width="300"
+                Grid.Row="4"
+                Width="200"
                 Margin="10"
                 HorizontalAlignment="Center"
                 VerticalAlignment="Center"

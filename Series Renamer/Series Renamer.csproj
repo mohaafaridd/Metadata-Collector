@@ -68,9 +68,10 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Libraries\HTMLExtractor.cs" />
-    <Compile Include="Libraries\IMDB.cs" />
-    <Compile Include="Libraries\TV.cs" />
+    <Compile Include="Libraries\Extractors\HTMLExtractor.cs" />
+    <Compile Include="Libraries\Compatible Websites\IMDB.cs" />
+    <Compile Include="Libraries\Extractors\StringExtractor.cs" />
+    <Compile Include="Libraries\Compatible Websites\TV.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -104,5 +105,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

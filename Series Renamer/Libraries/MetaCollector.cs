@@ -9,25 +9,30 @@ namespace Series_Renamer
 {
     public class MetaCollector
     {
+        public string SeriesName { get; set; }
         public string SeasonNumberString  { get; set; }
         public string EpisodeNumberString { get; set; }
         public string EpisodeName         { get; set; }
 
         public MetaCollector(IMDB imdb)
         {
+            SeriesName                  = imdb.SeriesName;
+
             int SeasonNumber            = Int32.Parse(imdb.Season);
 
-            SeasonNumberString = iToString(SeasonNumber);
+            SeasonNumberString          = iToString(SeasonNumber);
             
             int EpisodeNumber           = Int32.Parse(imdb.EpisodeNumber);
             
             EpisodeNumberString         = iToString(EpisodeNumber);
 
-            EpisodeName = imdb.EpisodeName;
+            EpisodeName                 = imdb.EpisodeName;
         }
 
         public MetaCollector(TV tv)
         {
+            SeriesName = tv.SeriesName;
+
             int SeasonNumber = Int32.Parse(tv.Season);
 
             SeasonNumberString = iToString(SeasonNumber);

@@ -34,18 +34,35 @@ namespace Series_Renamer
             urlTextBox.Text = string.Empty;
 
             if (SeasonCheckBox.IsChecked == true)
-                urlTextBox.Text += $"S{metaCollector.SeasonNumberString} - ";
+            {
+                urlTextBox.Text += $"S{metaCollector.SeasonNumberString}";
+            }
 
             if (EpisodeNumberCheckBox.IsChecked == true)
-                urlTextBox.Text += $"E{metaCollector.EpisodeNumberString} - ";
+            {
+                if (!string.IsNullOrWhiteSpace(urlTextBox.Text))
+                {
+                    urlTextBox.Text += " - ";
+                }
+                urlTextBox.Text += $"E{metaCollector.EpisodeNumberString}";
+            }
 
             if (EpisodeNameCheckBox.IsChecked == true)
+            {
+                if (!string.IsNullOrWhiteSpace(urlTextBox.Text))
+                {
+                    urlTextBox.Text += " - ";
+                }
                 urlTextBox.Text += $"{metaCollector.EpisodeName}";
+            }
+
+            SeriesName.Text = metaCollector.SeriesName;
 
             Clipboard.SetText(urlTextBox.Text);
             MessageBox.Show("Done!");
         }
 
+        #region Events
         private void Window_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             this.DragMove();
@@ -64,6 +81,7 @@ namespace Series_Renamer
         private void ClosingIcon_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             this.Close();
-        }
+        } 
+        #endregion
     }
 }
