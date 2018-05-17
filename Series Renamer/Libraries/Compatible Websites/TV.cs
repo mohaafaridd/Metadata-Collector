@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Series_Renamer.Libraries
+﻿namespace Series_Renamer.Libraries
 {
     public class TV
     {
@@ -33,13 +27,13 @@ namespace Series_Renamer.Libraries
         #region Constructor
         public TV(string URL)
         {
-            SeriesName = StringExtractor.getBetween(URL, "<span itemprop=\"name\">", "</span>");
+            SeriesName    = StringExtractor.getBetween(URL, "<span itemprop=\"name\">", "</span>");
 
-            Season = StringExtractor.getBetween(URL, "class=\"ep_season\" itemprop=\"partOfSeason\">Season ", "<");
+            Season        = StringExtractor.getBetween(URL, "class=\"ep_season\" itemprop=\"partOfSeason\">Season ", "<");
 
             EpisodeNumber = StringExtractor.getBetween(URL, "<span class=\"ep_number\">Episode <span itemprop=\"number\">", "<");
 
-            EpisodeName = StringExtractor.getBetween(URL, "<h2 class=\"ep_title\" itemprop=\"name\">", "<");
+            EpisodeName   = StringExtractor.getBetween(URL, "<h2 class=\"ep_title\" itemprop=\"name\">", "<");
         } 
         #endregion
     }

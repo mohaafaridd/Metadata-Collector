@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Series_Renamer.Libraries;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,10 +17,11 @@ using System.Windows.Shapes;
 namespace Series_Renamer
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for MainWindow.xamlSeasonToggleBox
     /// </summary>
     public partial class MainWindow : Window
     {
+        
         public MainWindow()
         {
             InitializeComponent();
@@ -27,39 +29,27 @@ namespace Series_Renamer
 
         private void getmetaButton_Click(object sender, RoutedEventArgs e)
         {
-            HTMLExtractor htmlExtractor = new HTMLExtractor(urlTextBox.Text);
-
-            MetaCollector metaCollector = htmlExtractor.MetaCollector;
-
-            urlTextBox.Text = string.Empty;
-
-            if (SeasonCheckBox.IsChecked == true)
+            foreach (ListBoxItem item in episodeHolder.Items)
             {
-                urlTextBox.Text += $"S{metaCollector.SeasonNumberString}";
-            }
 
-            if (EpisodeNumberCheckBox.IsChecked == true)
-            {
-                if (!string.IsNullOrWhiteSpace(urlTextBox.Text))
+                try
                 {
-                    urlTextBox.Text += " - ";
-                }
-                urlTextBox.Text += $"E{metaCollector.EpisodeNumberString}";
-            }
+                    HTMLExtractor htmlExtractor = new HTMLExtractor(item.Content.ToString());
 
-            if (EpisodeNameCheckBox.IsChecked == true)
-            {
-                if (!string.IsNullOrWhiteSpace(urlTextBox.Text))
+                    MetaCollector metaCollector = htmlExtractor.MetaCollector;
+
+                    MetaAssembler metaAssembler = new MetaAssembler(metaCollector, item, SeasonCheckBox, EpisodeNumberCheckBox, EpisodeNameCheckBox);
+
+                    SeriesName.Text = metaCollector.SeriesName;
+
+                }
+                catch (Exception)
                 {
-                    urlTextBox.Text += " - ";
+                    // Now who is the boss
                 }
-                urlTextBox.Text += $"{metaCollector.EpisodeName}";
+
             }
 
-            SeriesName.Text = metaCollector.SeriesName;
-
-            Clipboard.SetText(urlTextBox.Text);
-            MessageBox.Show("Done!");
         }
 
         #region Events
@@ -81,7 +71,29 @@ namespace Series_Renamer
         private void ClosingIcon_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             this.Close();
-        } 
+        }
         #endregion
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            string URL = urlTextBox.Text;
+
+            if (!string.IsNullOrWhiteSpace(URL))
+                episodeHolder.Items.Add(new ListBoxItem
+                {
+                    Content = URL
+                });
+        }
+
+        private void clearMetaButton_Click(object sender, RoutedEventArgs e)
+        {
+            episodeHolder.Items.Clear();
+            urlTextBox.Text = string.Empty;
+        }
+
+        private void episodeHolder_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            Clipboard.SetText((episodeHolder.SelectedItem as ListBoxItem).Content.ToString());
+        }
     }
 }

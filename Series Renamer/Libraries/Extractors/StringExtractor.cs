@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Series_Renamer.Libraries
+﻿namespace Series_Renamer.Libraries
 {
     public class StringExtractor
     {
@@ -21,7 +15,8 @@ namespace Series_Renamer.Libraries
             if (strSource.Contains(strStart) && strSource.Contains(strEnd))
             {
                 Start = strSource.IndexOf(strStart, 0) + strStart.Length;
-                End = strSource.IndexOf(strEnd, Start);
+                End   = strSource.IndexOf(strEnd, Start);
+
                 return strSource.Substring(Start, End - Start);
             }
             else

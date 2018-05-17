@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Series_Renamer.Libraries
+﻿namespace Series_Renamer.Libraries
 {
     public class IMDB
     {
@@ -40,17 +34,17 @@ namespace Series_Renamer.Libraries
 
         public IMDB(string URL)
         {
-            Holder = StringExtractor.getBetween(URL, "<div class=\"titleParent\">", "</div>");
+            Holder        = StringExtractor.getBetween(URL, "<div class=\"titleParent\">", "</div>");
 
-            SeriesName = StringExtractor.getBetween(Holder, "title=\"", "\" >");
+            SeriesName    = StringExtractor.getBetween(Holder, "title=\"", "\" >");
 
-            Holder = StringExtractor.getBetween(URL, "<div class=\"bp_heading\">", "div>");
+            Holder        = StringExtractor.getBetween(URL, "<div class=\"bp_heading\">", "div>");
 
-            Season = StringExtractor.getBetween(Holder, "Season ", "<");
+            Season        = StringExtractor.getBetween(Holder, "Season ", "<");
 
             EpisodeNumber = StringExtractor.getBetween(Holder, "Episode", "<");
 
-            EpisodeName = StringExtractor.getBetween(URL, "<h1 itemprop=\"name\" class=\"\">", "&nbsp;");
+            EpisodeName   = StringExtractor.getBetween(URL, "<h1 itemprop=\"name\" class=\"\">", "&nbsp;");
         } 
 
         #endregion

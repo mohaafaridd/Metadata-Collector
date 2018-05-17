@@ -72,13 +72,14 @@
     <Compile Include="Libraries\Compatible Websites\IMDB.cs" />
     <Compile Include="Libraries\Extractors\StringExtractor.cs" />
     <Compile Include="Libraries\Compatible Websites\TV.cs" />
+    <Compile Include="Libraries\Metadata Controllers\MetaAssembler.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Libraries\MetaCollector.cs" />
+    <Compile Include="Libraries\Metadata Controllers\MetaCollector.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
